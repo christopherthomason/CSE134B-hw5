@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Christopher Thomason Portfolio</title>
+    <link href="assets/styles/main.css" rel="stylesheet">
+    <link href="assets/images/favicon.ico" rel="icon">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Christopher Thomason
+        </h1>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/about.html">About Me</a>
+            <a href="/contact.html">Contact Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Me</h1>
+
+        <div class="contact-container">
+            <section class="contact-socials-box">
+                <p><strong>Email:</strong> <a href="mailto:cthomason@ucsd.edu">cthomason@ucsd.edu</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/christopher-thomason/">https://www.linkedin.com/in/christopher-thomason/</a></p>
+                <p><strong>GitHub</strong> <a href="https://github.com/christopherthomason">https://github.com/christopherthomason</a></p>
+            </section>
+            
+            <section class="contact-box">
+                <h2>Send Me a Message</h2>
+                <form id = "contact-form" action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <label for="name" class="required">Name:</label><br>
+                        <input type="text" id="name" name="name" required class="name-email">
+                        <br><br>
+
+                        <label for="email" class="required">Email:</label><br>
+                        <input type="email" id="email" name="email" required class="name-email">
+                        <span></span>
+                        <br><br>
+
+                        <label for="subject" class="optional">Subject:</label><br>
+                        <input type="text" id="subject" name="subject" optional>
+                        <br><br>
+
+                        <label for="comments" class="required">Comments:</label><br>
+                        <textarea id="comments" name="comments" rows="5" cols="40" required maxlength="200"></textarea>
+                        <br>
+                        <output class="info" id="info-output">Info: You're Doing Great</output>
+                        <br><br>
+
+                        <button type="submit">Send Message</button>
+                    </fieldset>
+
+                    <output class="error" id = "error-message"></output>
+                    <output class="submitted" id="submitted-message"></output>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p>This page was developed by Christopher Thomason</p>
+    </footer>
+</body>
+
+</html>

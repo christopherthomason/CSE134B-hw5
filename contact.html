@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Christopher Thomason Portfolio</title>
+    <link href="assets/styles/main.css" rel="stylesheet">
+    <link href="assets/images/favicon.ico" rel="icon">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Christopher Thomason
+        </h1>
+        <div class="header-nav-theme-box">
+            <label for="theme-selector">Select Theme:</label>
+            <select id="theme-selector">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+                <option value="retro">Retro</option>
+                <option value="luxury">Luxury</option>
+            </select>
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/portfolio.html">Portfolio</a>
+                <a href="/about.html">About Me</a>
+                <a href="/contact.html">Contact Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Me</h1>
+
+        <div class="contact-container">
+            <section class="contact-socials-box">
+                <p><strong>Email:</strong> <a href="mailto:cthomason@ucsd.edu">cthomason@ucsd.edu</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/christopher-thomason/">https://www.linkedin.com/in/christopher-thomason/</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/christopherthomason">https://github.com/christopherthomason</a></p>
+            </section>
+            
+            <section class="contact-box">
+                <h2>Send Me a Message</h2>
+                <form id = "contact-form" action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <label for="name" class="required">Name:</label><br>
+                        <input type="text" id="name" name="name" class="name-email">
+                        <br><br>
+
+                        <label for="email" class="required">Email:</label><br>
+                        <input type="email" id="email" name="email" class="name-email">
+                        <span></span>
+                        <br><br>
+
+                        <label for="subject">Subject:</label><br>
+                        <input type="text" id="subject" name="subject" optional>
+                        <br><br>
+
+                        <label for="comments" class="required">Comments:</label><br>
+                        <textarea id="comments" name="comments" rows="5" cols="40" maxlength="200"></textarea>
+                        <br>
+                        <output class="info" id="info-output">Characters remaining: 200</output>
+                        <br><br>
+
+                        <button type="submit">Send Message</button>
+                    </fieldset>
+
+                    <output class="error" id = "error-message"></output>
+                    <output class="submitted" id="submitted-message"></output>
+                </form>
+
+                
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p>This page was developed by Christopher Thomason</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const errorMessage = document.getElementById('error-message');
+        const submittedMessage = document.getElementById('submitted-message');
+        let formErrors = []; // To capture the errors
+
+        // Utility function to handle errors
+        function displayError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.color = 'red';
+            errorMessage.style.display = 'block';
+        }
+
+        // Masking mechanism (illegal characters)
+        function maskInput(event) {
+            const input = event.target;
+            const pattern = /^[a-zA-Z0-9 ]*$/;  // Example: only alphanumeric characters and spaces allowed
+            if (!pattern.test(input.value)) {
+                input.style.border = '2px solid red';
+                displayError('Invalid character entered.');
+                input.setCustomValidity('Invalid character entered.');
+            } else {
+                input.style.border = 'none';
+                errorMessage.style.display = 'none';
+                input.setCustomValidity('');
+            }
+        }
+
+
+        // Character limit countdown
+        const commentsField = document.getElementById('comments');
+        const maxLength = commentsField.getAttribute('maxlength');
+        const remainingCharacters = document.getElementById('info-output');
+
+        function updateCharacterCount() {
+            const remaining = maxLength - commentsField.value.length;
+            remainingCharacters.textContent = `Characters remaining: ${remaining}`;
+
+            if (remaining <= 50) {
+                remainingCharacters.style.color = 'orange';
+            }
+
+            if (remaining <= 0) {
+                remainingCharacters.style.color = 'red';
+                commentsField.setCustomValidity('Character limit exceeded.');
+            } else {
+                commentsField.setCustomValidity('');
+            }
+        }
+
+        // Add event listeners
+        document.getElementById('name').addEventListener('input', maskInput);
+        document.getElementById('subject').addEventListener('input', maskInput);
+        commentsField.addEventListener('input', updateCharacterCount);
+        commentsField.addEventListener('input', maskInput);
+
+        // Form submission event
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formErrors = [];
+
+            let isValid = true;
+
+            form.querySelectorAll('input, textarea').forEach(input => input.setCustomValidity(''));
+
+            // Validate each field
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const subjectField = document.getElementById('subject');
+
+            if (!nameField.value.trim()) {
+                nameField.setCustomValidity('Name is required.');
+                formErrors.push({ field: 'name', message: 'Name is required.' });
+                isValid = false;
+            }
+
+            if (!emailField.value.trim() || !emailField.checkValidity()) {
+                emailField.setCustomValidity('Valid email is required.');
+                formErrors.push({ field: 'email', message: 'Valid email is required.' });
+                isValid = false;
+            }
+
+            if (!subjectField.value.trim()) {
+                subjectField.setCustomValidity('Subject is required.');
+                formErrors.push({ field: 'subject', message: 'Subject is required.' });
+                isValid = false;
+            }
+
+            if (commentsField.value.trim().length === 0) {
+                commentsField.setCustomValidity('Message is required.');
+                formErrors.push({ field: 'message', message: 'Message is required.' });
+                isValid = false;
+            }
+
+            if (formErrors.length > 0) {
+                displayError('There were errors with the form. Please check your input.');
+            }
+            if (!isValid) {
+                displayError('There were errors with the form. Please check your input.');
+                // Add errors to the form-errors field
+                const formErrorsInput = document.createElement('input');
+                formErrorsInput.setAttribute('type', 'hidden');
+                formErrorsInput.setAttribute('name', 'form-errors');
+                formErrorsInput.setAttribute('value', JSON.stringify(formErrors));
+                console.log(JSON.stringify(formErrors));
+                form.appendChild(formErrorsInput);
+            } else {
+                // If form is valid, display the success message
+                submittedMessage.textContent = "Your message has been sent.";
+            }
+        });
+    </script>
+
+    <script src="assets/scripts/themeSelector.js"></script>
+</body>
+
+</html>

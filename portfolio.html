@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Christopher Thomason Portfolio</title>
+    <link href="assets/styles/main.css" rel="stylesheet">
+    <link href="assets/images/favicon.ico" rel="icon">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Christopher Thomason
+        </h1>
+        <div class="header-nav-theme-box">
+            <label for="theme-selector">Select Theme:</label>
+            <select id="theme-selector">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+                <option value="retro">Retro</option>
+                <option value="luxury">Luxury</option>
+            </select>
+            <nav>
+                <a href="/index.html">Home</a>
+                <a href="/portfolio.html">Portfolio</a>
+                <a href="/about.html">About Me</a>
+                <a href="/contact.html">Contact Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="flexbox">
+            <h1>Portfolio</h1>
+
+            <section class="box">
+                <p>Jump To:</p>
+                <nav>
+                    <ul>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="resume" class="box">
+                <h2>Resume</h2>
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>Java, C, C++, Python, JavaScript, TypeScript, SQL</li>
+                    <li>React, Git, <abbr title="Amazon Web Services">AWS</abbr>, Lambda, API Gateway</li>
+                    <li>Microsoft Office, Google Suite</li>
+                </ul>
+                <h3>Experience</h3>
+                <p>Software Development Engineer Intern | Amazon Web Services IAM | June 2024-Sept 2024</p>
+                <ul>
+                    <li>Engineered  a full-stack AWS live-site operations tool, significantly boosting engineer productivity by automating manual processes for correlating fleetwide deployments in order to isolate root cause.</li>
+                    <li>Developed an AWS Lambda microservice in Java, integrating with six internal AWS APIs to automate the correlation of regional deployments with incident tickets, reducing a tedious, multi-step manual process from 10 steps to 1.</li>
+                    <li>Created a React component in TypeScript, deployed on a live-site tools dashboard, improving accessibility and speed for on call engineers.</li>
+                    <li>Streamlined incident management via automated ticket comments, reducing engineer workload by posting correlated regional deployments as ticket comments to further accelerate root cause identification.</li>
+                    <li>Collaborated with cross-functional teams and engineers to define technical requirements, onboard to necessary services, implement secure authentication, and ensure seamless deployment in compliance with AWS standards.</li>
+                </ul>
+                <h3>Education</h3>
+                <p>BS in Computer Science and Engineering | University of California - San Diego | Expected Graduation: June 2025</p>
+                <ul>
+                    <li><b>Relevant College Courses:</b> Systems Programming (C) | Advanced Data Structures (C++) | Design & Analysis of Algorithms | Digital Systems | Operating Systems | Machine Learning | Database System Principles (SQL) | Programming Languages Principles (Haskell)</li>
+                    <li>Led team project to build an AI recipe generation app in Java, using ChatGPT APIs, Whisper API, and MongoDB </li>
+                    <li>Led a project to build a file compressor and decompressor in C++</li>
+                    <li><b>Extracurriculars:</b> UCSD Computer Science & Engineering Society, UCSD Mens Ultimate Frisbee</li>
+                </ul>
+            </section>
+
+            <section id="projects" class="box">
+                <h2>Projects</h2>
+
+                <div class="orbit-container">
+                    <div class="center-mass"></div>
+                    <div class="orbit">
+                        <div class="orbiting-mass"></div>
+                    </div>
+                </div>
+
+                <div class="wip-message-container">
+                    <p class="wip-message"><b>WIP</b></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p>This page was developed by Christopher Thomason</p>
+    </footer>
+
+    <script src="assets/scripts/themeSelector.js"></script>
+</body>
+
+</html>
