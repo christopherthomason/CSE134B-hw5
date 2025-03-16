@@ -6,6 +6,8 @@
     <title>Christopher Thomason Portfolio</title>
     <link href="assets/styles/main.css" rel="stylesheet">
     <link href="assets/images/favicon.ico" rel="icon">
+    <link href="assets/images/awslambda.svg" rel="preload">
+    <link href="assets/images/pantrypal.png" rel="preload">
 </head>
 
 <body>
@@ -31,64 +33,77 @@
     </header>
 
     <main>
-        <div class="flexbox">
-            <h1>Portfolio</h1>
+        <h1>Portfolio</h1>
+        <div class="portfolio-container">
+            <nav class="portfolio-nav">
+                <h3>Jump To:</h3>
+                <a href="#resume">Resume</a><br>
+                <a href="#projects">Projects</a>
+            </nav>
 
-            <section class="box">
-                <p>Jump To:</p>
-                <nav>
+            <section id="resume" class="portfolio-resume-container">
+                <h2 class="portfolio-headers">Resume</h2>
+                <section class="portfolio-resume-card">
+                    <h3>Technical Skills</h3>
                     <ul>
-                        <li><a href="#resume">Resume</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                        <li>Java, C, C++, Python, JavaScript, TypeScript, SQL</li>
+                        <li>React, Git, AWS, Lambda, API Gateway</li>
+                        <li>Microsoft Office, Google Suite</li>
                     </ul>
-                </nav>
-            </section>
-            <section id="resume" class="box">
-                <h2>Resume</h2>
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Java, C, C++, Python, JavaScript, TypeScript, SQL</li>
-                    <li>React, Git, <abbr title="Amazon Web Services">AWS</abbr>, Lambda, API Gateway</li>
-                    <li>Microsoft Office, Google Suite</li>
-                </ul>
-                <h3>Experience</h3>
-                <p>Software Development Engineer Intern | Amazon Web Services IAM | June 2024-Sept 2024</p>
-                <ul>
-                    <li>Engineered  a full-stack AWS live-site operations tool, significantly boosting engineer productivity by automating manual processes for correlating fleetwide deployments in order to isolate root cause.</li>
-                    <li>Developed an AWS Lambda microservice in Java, integrating with six internal AWS APIs to automate the correlation of regional deployments with incident tickets, reducing a tedious, multi-step manual process from 10 steps to 1.</li>
-                    <li>Created a React component in TypeScript, deployed on a live-site tools dashboard, improving accessibility and speed for on call engineers.</li>
-                    <li>Streamlined incident management via automated ticket comments, reducing engineer workload by posting correlated regional deployments as ticket comments to further accelerate root cause identification.</li>
-                    <li>Collaborated with cross-functional teams and engineers to define technical requirements, onboard to necessary services, implement secure authentication, and ensure seamless deployment in compliance with AWS standards.</li>
-                </ul>
-                <h3>Education</h3>
-                <p>BS in Computer Science and Engineering | University of California - San Diego | Expected Graduation: June 2025</p>
-                <ul>
-                    <li><b>Relevant College Courses:</b> Systems Programming (C) | Advanced Data Structures (C++) | Design & Analysis of Algorithms | Digital Systems | Operating Systems | Machine Learning | Database System Principles (SQL) | Programming Languages Principles (Haskell)</li>
-                    <li>Led team project to build an AI recipe generation app in Java, using ChatGPT APIs, Whisper API, and MongoDB </li>
-                    <li>Led a project to build a file compressor and decompressor in C++</li>
-                    <li><b>Extracurriculars:</b> UCSD Computer Science & Engineering Society, UCSD Mens Ultimate Frisbee</li>
-                </ul>
+                </section>
+                <section class="portfolio-resume-card">
+                    <h3>Experience</h3>
+                    <p>Software Development Engineer Intern | Amazon Web Services IAM | June 2024-Sept 2024</p>
+                    <ul>
+                        <li>Engineered  a full-stack AWS live-site operations tool, significantly boosting engineer productivity by automating manual processes for correlating fleetwide deployments in order to isolate root cause.</li>
+                        <li>Developed an AWS Lambda microservice in Java, integrating with six internal AWS APIs to automate the correlation of regional deployments with incident tickets, reducing a tedious, multi-step manual process from 10 steps to 1.</li>
+                        <li>Created a React component in TypeScript, deployed on a live-site tools dashboard, improving accessibility and speed for on call engineers.</li>
+                        <li>Streamlined incident management via automated ticket comments, reducing engineer workload by posting correlated regional deployments as ticket comments to further accelerate root cause identification.</li>
+                        <li>Collaborated with cross-functional teams and engineers to define technical requirements, onboard to necessary services, implement secure authentication, and ensure seamless deployment in compliance with AWS standards.</li>
+                    </ul>
+                </section>
+                <section class="portfolio-resume-card">
+                    <h3>Education</h3>
+                    <p>BS in Computer Science and Engineering | University of California - San Diego | Expected Graduation: June 2025</p>
+                    <ul>
+                        <li><b>Relevant College Courses:</b> Systems Programming (C) | Advanced Data Structures (C++) | Design & Analysis of Algorithms | Digital Systems | Operating Systems | Machine Learning | Database System Principles (SQL) | Programming Languages Principles (Haskell)</li>
+                        <li>Led team project to build an AI recipe generation app in Java, using ChatGPT APIs, Whisper API, and MongoDB </li>
+                        <li>Led a project to build a file compressor and decompressor in C++</li>
+                        <li><b>Extracurriculars:</b> UCSD Computer Science & Engineering Society, UCSD Mens Ultimate Frisbee</li>
+                    </ul>
+                </section>
             </section>
 
-            <section id="projects" class="box">
-                <h2>Projects</h2>
-
-                <div class="orbit-container">
-                    <div class="center-mass"></div>
-                    <div class="orbit">
-                        <div class="orbiting-mass"></div>
-                    </div>
-                </div>
-
-                <div class="wip-message-container">
-                    <p class="wip-message"><b>WIP</b></p>
-                </div>
+            <section id="projects" class="portfolio-project-container">
+                <h2 class="portfolio-headers">Projects</h2>
+                <section class="portfolio-project-card">
+                    <picture>
+                        <img src="assets/images/awslambda.svg" alt="placeholder">
+                    </picture>
+                    <h2>AWS Live-Site Operations Tool</h2>
+                    <p>
+                        For my intern project at AWS, I built a live-site operations tool to aid on call developers in 
+                        root cause analysis. It allowed for the user to put a ticket ID into the tool, and it would automatically retrieve 
+                        recent related deployments. It also allowed for the data found by the tool to be added to the 
+                        comments of the ticket for ease of access. (Can't show picture of tool due to confidentiality.)
+                    </p>
+                </section>
+                <section class="portfolio-project-card">
+                    <picture>
+                        <img src="assets/images/pantrypal.png" alt="placeholder" id="pantrypal">
+                    </picture>
+                    <h2>PantryPal</h2>
+                    <p>
+                        PantryPal is an AI recipe generation app written in Java that used ChatGPT's API, Whisper API, and MongoDB. It allows the 
+                        user to input the type of meal they want and their available ingredients, and have a list of recipes generated only requiring 
+                        the given ingredients. 
+                    </p>
+                </section>
             </section>
         </div>
     </main>
 
     <footer>
-        <hr>
         <p>This page was developed by Christopher Thomason</p>
     </footer>
 
