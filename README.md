@@ -1,0 +1,1 @@
+I decided to redesign the entire style of the site because I hated it, so I changed it from a weird bubbly design to a more sleek boxy design that I hate slightly less. 

@@ -204,6 +204,30 @@ main h1 {
     color: var(--text-color, black);
 }
 
+.home-card img {
+    max-width: 60%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border: 5px solid var(--accent-color, #F8F9FA);
+}
+
+.home-card picture {
+    display: flex;
+    justify-content: center;
+}
+
+#aws-logo {
+    border: none;
+    max-width: 80%;
+}
+
+#logos {
+    max-width: 80%;
+}
+
 .home-grid a {
     text-decoration: none;
     color: var(--text-color, black);
