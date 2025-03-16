@@ -6,8 +6,8 @@
     <title>Christopher Thomason Portfolio</title>
     <link href="assets/styles/main.css" rel="stylesheet">
     <link href="assets/images/favicon.ico" rel="icon">
-    <link href="assets/images/awslambda.svg" rel="preload">
-    <link href="assets/images/pantrypal.png" rel="preload">
+    <script src="assets/scripts/projectCard.js"></script>
+    <script src="assets/scripts/loadProjects.js"></script>
 </head>
 
 <body>
@@ -76,7 +76,7 @@
 
             <section id="projects" class="portfolio-project-container">
                 <h2 class="portfolio-headers">Projects</h2>
-                <section class="portfolio-project-card">
+                <!-- <section class="portfolio-project-card">
                     <picture>
                         <img src="assets/images/awslambda.svg" alt="placeholder">
                     </picture>
@@ -98,7 +98,14 @@
                         user to input the type of meal they want and their available ingredients, and have a list of recipes generated only requiring 
                         the given ingredients. 
                     </p>
-                </section>
+                </section> -->
+                <div class="load-button-panel">
+                    <button onclick=loadLocal()>Load Local</button>
+                    <button onclick=loadRemote()>Load Remote</button>
+                </div>
+                
+                <project-card id="aws-project"></project-card>
+                <project-card id="pantrypal-project"></project-card>
             </section>
         </div>
     </main>

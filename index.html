@@ -6,6 +6,7 @@
     <title>Christopher Thomason Portfolio</title>
     <link href="assets/styles/main.css" rel="stylesheet">
     <link href="assets/images/favicon.ico" rel="icon">
+    <script src="assets/scripts/homeCard.js"></script>
 </head>
 
 <body>
@@ -31,29 +32,30 @@
     </header>
 
     <main class="home-grid">
-        <a href="/portfolio.html" class="home-card">
-            <picture>
-                <img src="assets/images/aws.png" alt="placeholder" id="aws-logo">
-            </picture>
-            <h2>Portfolio</h2>
-            <p>Click here to see my resume and some projects I've worked on!</p>
-        </a>
-
-        <a href="/about.html" class="home-card">
-            <picture>
-                <img src="assets/images/idphoto.jpeg" alt="placeholder">
-            </picture>
-            <h2>About Me</h2>
-            <p>Click here to learn more about me!</p>
-        </a>
-
-        <a href="/contact.html" class="home-card">
-            <picture>
-                <img src="assets/images/logos.png" alt="placeholder" id="logos">
-            </picture>
-            <h2>Contact Me</h2>
-            <p>Click here if you want to find my socials or get in contact with me!</p>
-        </a>
+        <home-card
+            href="/portfolio.html"
+            img-src="assets/images/aws.png"
+            img-alt="Amazon Web Services Logo"
+            img-id="aws-logo"
+            header-text="Portfolio"
+            description="Click here to see my resume and some projects I've worked on!"
+        ></home-card>
+        <home-card
+            href="/about.html"
+            img-src="assets/images/idphoto.jpeg"
+            img-alt="Photo of me in a green shirt"
+            img-id="idphoto"
+            header-text="About Me"
+            description="Click here to learn more about me!"
+        ></home-card>
+        <home-card
+            href="/contact.html"
+            img-src="assets/images/logos.png"
+            img-alt="LinkedIn, GitHub, and Gmail logos side by side"
+            img-id="logos"
+            header-text="Contact Me"
+            description="Click here if you want to find my socials or get in contact with me!"
+        ></home-card>
     </main>
 
     <footer>
